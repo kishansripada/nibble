@@ -10,7 +10,12 @@ export default function Home({ params }: { params: any }) {
    const [userType, setUserType] = useState(searchParams.get("iama") || "eater");
    return (
       <main className="flex min-h-screen flex-col items-center justify-start px-5 xl:px-36 bg-neutral-900 overflow-hidden relative">
-         <div className="fixed bottom-4 right-4 h-12 w-64 border border-pink-500 rounded-xl flex flex-row items-cente text-white p-1">
+         <div
+            style={{
+               display: searchParams.get("iama") ? "none" : "flex",
+            }}
+            className="fixed bottom-4 right-4 h-12 w-64 border border-pink-500 rounded-xl  flex-row items-center text-white p-1"
+         >
             <button
                onClick={() => {
                   setUserType("eater");
@@ -51,13 +56,13 @@ export default function Home({ params }: { params: any }) {
                   </p>
                </div>
                <p className="mx-auto text-sm  xl:text-2xl mt-8 px-[5%] text-center sm:mt-10 sm:max-w-md sm:px-0 md:mt-12 md:max-w-lg xl:mt-14 xl:max-w-xl text-white">
-                  drive in-store traffic 🚶🏽‍♂️, increase brand awareness 😎 and delight your customers with nibble 🍽️, the subscription-based food
-                  sampling service.
+                  Drive in-store traffic 🚶🏽‍♂️, increase brand awareness 😎 and delight your customers with nibble 🍽️, the subscription-based food
+                  sampling platform.
                </p>
 
                <a href="https://forms.gle/HgNNmuoXCSvJRdVk7">
                   <div className="text-black bg-white mt-10 px-4 py-2 rounded-full text-center lg:text-left  flex flex-row items-center">
-                     <p>request access at your quick-serve restaurant</p>
+                     <p>Request Access At Your Quick-Serve Restaurant</p>
                      <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -87,7 +92,7 @@ export default function Home({ params }: { params: any }) {
                   </p>
                </div>
                <p className="mx-auto text-sm  xl:text-2xl mt-8 px-[5%] text-center sm:mt-10 sm:max-w-md sm:px-0 md:mt-12 md:max-w-lg xl:mt-14 xl:max-w-xl text-white">
-                  Passing by your favorite coffee shop and just wanna nibble? 🚶🏽‍♂️ Walking past a new boba store and wanna entertain your taste buds? 👅
+                  Passing by your favorite coffee shop and just wanna bite? 🚶🏽‍♂️ Wanna entertain your taste buds on your walk to class? 👅
                </p>
 
                <a href="https://forms.gle/HgNNmuoXCSvJRdVk7">
