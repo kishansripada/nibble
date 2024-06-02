@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -10,7 +11,7 @@ export default function Home({ params }: { params: any }) {
    const [userType, setUserType] = useState(searchParams.get("iama") || "eater");
    return (
       <main className="flex min-h-screen flex-col items-center justify-start px-5 xl:px-36 bg-neutral-900 overflow-hidden relative">
-         <div
+         {/* <div
             style={{
                display: searchParams.get("iama") ? "none" : "flex",
             }}
@@ -38,8 +39,8 @@ export default function Home({ params }: { params: any }) {
             >
                👩‍🍳 Restaurant
             </button>
-         </div>
-         {userType === "restaurant" ? (
+         </div> */}
+         {false ? (
             <>
                <div className=" text-6xl sm:text-6xl text-center md:text-9xl  xl:leading-[1]  text-white font-bold pt-12">
                   <p
@@ -78,7 +79,7 @@ export default function Home({ params }: { params: any }) {
             </>
          ) : (
             <>
-               <div className=" text-6xl sm:text-6xl text-center md:text-9xl  xl:leading-[1]  text-white font-bold pt-12">
+               <div className=" text-6xl sm:text-6xl text-center md:text-8xl  xl:leading-[1]  text-white font-bold pt-12">
                   <p
                      style={{
                         color: "transparent",
@@ -88,16 +89,22 @@ export default function Home({ params }: { params: any }) {
                      className="relative z-10 animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent   font-bold "
                   >
                      {/* showcase your best food */}
-                     Small Bites, <span className="text-white">Everywhere You Go</span>
+                     <p>Sign up once.</p> <span className="text-white">Small bites all over NYC</span>
                   </p>
                </div>
-               <p className="mx-auto text-sm  xl:text-2xl mt-8 px-[5%] text-center sm:mt-10 sm:max-w-md sm:px-0 md:mt-12 md:max-w-lg xl:mt-14 xl:max-w-xl text-white">
-                  Passing by your favorite coffee shop and just wanna bite? 🚶🏽‍♂️ Wanna entertain your taste buds on your walk to class? 👅
+               <p className="mx-auto text-sm  xl:text-xl mt-8 px-[5%] text-center sm:mt-10 sm:max-w-md sm:px-0 md:mt-12 md:max-w-lg xl:mt-14 xl:max-w-xl text-neutral-300">
+                  Tastr is the subscription-based food sampling platform that lets you try the best food in NYC.
                </p>
 
-               <a href="https://forms.gle/HgNNmuoXCSvJRdVk7">
+               <input
+                  type="email"
+                  placeholder="What's your email?"
+                  className="bg-transparent focus:outline-purple-500 text-white focus:outline-2 px-3  w-[375px] py-2 rounded-md  outline-purple-500 outline mt-5"
+               />
+
+               <Link href="https://forms.gle/HgNNmuoXCSvJRdVk7">
                   <div className="text-black bg-white mt-10 px-4 py-2 rounded-full  flex flex-row items-center">
-                     <p>Join Nibble Today</p>
+                     <p>Join the waitlist</p>
                      <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -109,7 +116,7 @@ export default function Home({ params }: { params: any }) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                      </svg>
                   </div>
-               </a>
+               </Link>
             </>
          )}
       </main>
